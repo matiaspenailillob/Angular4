@@ -10,10 +10,9 @@ export class CargararchivoService {
   cantCampDetectados: any;
 
 
-  constructor() { 
-  }
+  constructor() { }
 
-  
+
 
   getCamposDetectados() {
     return this.campDetectados = [ 'Rut', 'Nom', 'Ap', 'Genero', 'Fecha' ];

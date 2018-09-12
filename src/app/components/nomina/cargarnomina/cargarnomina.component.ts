@@ -39,7 +39,7 @@ export class CargarNominaComponent implements OnInit {
 
   onChange() {
     this.cargaNomina.solicitud = this.cargarnominaForm.value.solicitud;
-    this.excelFile = this.cargarnominaForm.value.excelFile; 
+    this.excelFile = this.cargarnominaForm.value.excelFile;
   }
 
   onSubmit() {

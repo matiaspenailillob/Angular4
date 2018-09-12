@@ -2,8 +2,8 @@
 
 <div class="col col-md"></div>
 <h2 style="margin-top: 50px">Sincronización </h2>
-<form  >
-  
+<form [formGroup]="sincronizacionForm" (ngSubmit)="onSubmit()">
+
   <div class="col-md-12" style="margin-bottom: 10px">
     <div class="card">
         <div class="card-content" >
@@ -21,10 +21,10 @@
                   <h6 style="float: left;">Cant. Categorias: {{ res }}</h6>
               </div>
             </div>
-        </div> 
+        </div>
       </div>
   </div>
-    
+
 
   <div class="col-md-12 form-inline" style="width: 100%;" >
       <div class="col-md-4" id="tbCampPosibles">
@@ -83,10 +83,10 @@
                         (dndCopied)="onDraggableCopied($event)" >
                             Inserte AQUI
                         </div>
-                      
+
                     </section>
                   -->
-                    <select class="form-control" formControlName="selectCampoPosible" [ngModel]="selectCampoPosible">
+                    <select class="form-control" formControlName="selectCampoPosible" ngModel name="selectCampoPosible">
                         <option value="-1">Seleccione...</option>
                         <option *ngFor="let campoposible of camposposibles" [value]="campoposible">{{ campoposible }}</option>
                     </select>
@@ -94,7 +94,7 @@
               </tr>
             </tbody>
           </table>
-      </div>  
+      </div>
   </div>
 
 <div class="col-md-12 div2" style=" text-align: right">
@@ -158,7 +158,7 @@ var dragged;
           dragged.parentNode.removeChild( dragged );
           event.target.appendChild( dragged );
       }
-    
+
   }, false);
 </script>
 
