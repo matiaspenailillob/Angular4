@@ -1,0 +1,65 @@
+<div class="container">
+    <div class="col col-md"></div>
+    <h2 style="margin-top: 50px; margin-bottom: 20px">Resumen</h2>
+    <form (ngSubmit)="onSubmit();" >
+      <div class="col-md-12 form-inline">
+        <div class="col-md-8 " style="width: 100%"> 
+          <table class="table table-bordered">
+              <thead>
+                <th>Cant. Personas</th>
+                <th>Cant. Cargas</th>
+              </thead>
+              <tbody>
+                <tr *ngFor="let info of infoResumen">
+                    <td>{{ info.cantPersonas }}</td>
+                    <td>{{ info.cantCargas }}</td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+        <div class="col-md-4 " style="text-align: left; width: 98%;">
+            <button type="button" class="btn btn-primary"  style="margin-bottom: 10px;" routerLink="/creargrupo">
+              <span class="fa fa-plus "></span>
+              Crear Nuevo Grupo
+            </button><br>
+           <button type="submit"
+                   class="btn btn-success"
+                   style="margin-bottom: 10px; margin-right: 7px">
+             <span class="fa fa-save"></span>
+             Guardar
+           </button><br>
+           <button routerLink="/cargarnomina" class=" btn btn-danger" style="float:left; width: auto; margin-right: 10px">
+            <span class="fa fa-reply"></span>  
+            Volver
+            </button>
+        </div>
+      </div>
+    </form>
+</div>
+
+<!--
+<div class="container">
+  <h2>Resumen</h2>
+  
+  <button type="button" 
+          class="btn btn-primary" 
+          style="margin-bottom: 10px; float: right"
+          routerLink="/creargrupo">
+    <span class="fa fa-plus "></span>
+    Crear Nuevo Grupo
+  </button>
+  <a href="/cargarnomina" class="form-control" style="float:right; width: auto; margin-right: 10px">Volver</a>
+  <table class="table table-bordered">
+    <thead>
+      <th>Cant. Personas</th>
+      <th>Cant. Cargas</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let info of infoResumen">
+          <td>{{ info.cantPersonas }}</td>
+          <td>{{ info.cantCargas }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+-->

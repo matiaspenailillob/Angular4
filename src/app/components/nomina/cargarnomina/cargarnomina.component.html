@@ -1,0 +1,69 @@
+<p class="alert alert-danger"
+    *ngIf=" validate() && !validateSolicitud() &&
+    cargarnominaForm.controls.solicitud.touched">
+    - El número de solicitud no es válido
+</p>
+<p class="alert alert-danger"
+    *ngIf=" !validate() &&
+    cargarnominaForm.controls.solicitud.touched ">
+    - Debe ingresar un numero de solicitud
+</p>
+<div class="container">
+    <div class="col col-md"></div>
+    <h2 style="margin-top: 50px">Especificaciones</h2>
+    <form [formGroup]="cargarnominaForm" (ngSubmit)="onSubmit(); estado=true" >
+      <div class="col-md-6 div1">
+        <div class="form-group">
+          <div class="col-md-4 div1">
+            <label for="solicitud">N° de solicitud:</label>
+            <i class="fa fa-check-circle check"
+               *ngIf="validateSolicitud()"></i>
+            <i class="fa fa-exclamation-circle uncheck"
+                *ngIf="!validateSolicitud() &&
+                cargarnominaForm.controls.solicitud.touched"></i>
+          </div>
+          <div class="col-md-8 div1">
+            <input type="number" 
+                   class="form-control" 
+                   id="solicitud" 
+                   formControlName="solicitud"
+                   [(ngModel)]="solicitud"  />
+            
+          </div>
+        </div>
+    
+      </div>
+      <div class="col-md-6 div2">
+        <div class="form-group">
+          <div class="col-md-4 div1">
+            <label>Cargar Nómina:</label>
+          </div>
+          <div class="col-md-8 div1">
+            <input type="file" 
+                   id="excelFile"
+                   [disabled]="!validateSolicitud()"
+                   [(ngModel)]="excelFile" [ngModelOptions]="{standalone: true}">
+          </div>
+        </div>
+    
+      </div>
+    
+      <div class="col-md-12 div2" style=" text-align: right">
+          <button type="submit"
+                  class="btn btn-success" 
+                  style="margin-top: 20px;"
+                  [disabled]="!validateScan()">
+            Escanear
+            <span class="fa fa-search"></span>
+          </button>
+        
+      </div>
+     
+    </form>
+    <p *ngIf="estado">
+      <app-sincronizacion></app-sincronizacion>
+    </p>
+</div>
+
+
+

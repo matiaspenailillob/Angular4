@@ -1,0 +1,162 @@
+<p class="alert alert-danger" *ngIf="!validateName() && crearGrupoForm.controls.nombreGrupo.touched">
+    Debe ingresar un nombre
+</p>
+<div class="container">
+  
+<div class="col col-md"></div>
+<h2 style="margin-top: 50px">Crear Nuevo Grupo</h2>
+<form [formGroup]="crearGrupoForm" (ngSubmit)="onSubmit();" >
+    <div class="col-md-12 " style="width: 100%"> 
+      <div class="col-md-12 form-inline" style="margin-bottom: 10px">
+        <div class="col-md-4" style="width: 40%">
+          <label style="align-self: left">Nombre del grupo: </label>
+          <i class="fa fa-check-circle check"
+                  *ngIf="validateName()"></i>
+          <i class="fa fa-exclamation-circle uncheck"
+                  *ngIf="!validateName() &&
+                  crearGrupoForm.controls.nombreGrupo.touched"></i>
+        </div>
+        <div class="col-md-7 " style="width: 60%">
+          <input type="text" class="form-control" style="width: 100%;" formControlName="nombreGrupo" [(ngModel)]="nombreGrupo" >
+          
+        </div>
+      </div>
+      <div class="col-md-12 form-inline">
+        <div class="col-md-12">
+          <table class="table table-bordered">
+            <thead>
+              <th>Categoria 1</th>
+              <th>Categoria 2</th>
+              <th>Categoria 3</th>
+              <th>Categoria 4</th>
+              <th>Categoria 5</th>
+              <th>Categoria 6</th>
+              <th>Categoria 7</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="checkbox"> tipo 1</td>
+                <td><input type="checkbox"> tipo 1</td>
+                <td><input type="checkbox"> tipo 1</td>
+                <td><input type="checkbox"> tipo 1</td>
+                <td><input type="checkbox"> tipo 1</td>
+                <td><input type="checkbox"> tipo 1</td>
+                <td><input type="checkbox"> tipo 1</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox"> tipo 2</td>
+                <td><input type="checkbox"> tipo 2</td>
+                <td><input type="checkbox"> tipo 2</td>
+                <td><input type="checkbox"> tipo 2</td>
+                <td><input type="checkbox"> tipo 2</td>
+                <td><input type="checkbox"> tipo 2</td>
+                <td><input type="checkbox"> tipo 2</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox"> tipo 3</td>
+                <td><input type="checkbox"> tipo 3</td>
+                <td><input type="checkbox"> tipo 3</td>
+                <td><input type="checkbox"> tipo 3</td>
+                <td><input type="checkbox"> tipo 3</td>
+                <td><input type="checkbox"> tipo 3</td>
+                <td><input type="checkbox"> tipo 3</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox"> tipo 4</td>
+                <td></td>
+                <td><input type="checkbox"> tipo 4</td>
+                <td><input type="checkbox"> tipo 4</td>
+                <td></td>
+                <td><input type="checkbox"> tipo 4</td>
+                <td><input type="checkbox"> tipo 4</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+       
+      </div>
+</div>
+<div class="col-md-12 " style="text-align: right; width: 98%;">
+    <label></label>
+    <button type="button" class="btn btn-primary" style="margin-bottom: 10px;  margin-right: 7px">
+     <span class="fa fa-plus"></span>
+     Generar Grupo Único
+   </button>
+   <button type="button"
+           class="btn btn-success"
+           style="margin-bottom: 10px; margin-right: 7px"
+           routerLink="/resumengrupo">
+     <span class="fa fa-filter"></span>
+     Filtrar
+   </button>
+</div>
+</form>
+
+</div>
+
+<!-- 
+   <div class="form-inline">
+      <div class="col-md-9">
+          <div class="col-md-12 form-inline" style="margin-bottom: 10px; text-align: left">
+              <div class="col-xs-4">
+                <label> Ingrese un nombre: </label>
+                <i class="fa fa-check-circle check"
+                     *ngIf="validateName()"></i>
+                  <i class="fa fa-exclamation-circle uncheck"
+                      *ngIf="!validateName() &&
+                      crearGrupoForm.controls.nombreGrupo.touched"></i>
+              </div>
+              <div class="col-xs-8">
+                  <input type="text" class="form-control" style="width: 100%" formControlName="nombreGrupo" [(ngModel)]="nombreGrupo" >
+                  <p class="alert alert-danger" *ngIf="!validateName() && crearGrupoForm.controls.nombreGrupo.touched">
+                      Debe ingresar un nombre
+                  </p>
+              </div>
+            </div>
+            <div class="col-md-12 form-inline">
+              <div class="col-md-12">
+                <table class="table table-bordered">
+                  <thead>
+                    <th>Categoria 1</th>
+                    <th>Categoria 2</th>
+                    <th>Categoria 3</th>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><input type="checkbox"> tipo 1</td>
+                      <td><input type="checkbox"> tipo 1</td>
+                      <td><input type="checkbox"> tipo 1</td>
+                    </tr>
+                    <tr>
+                      <td><input type="checkbox"> tipo 2</td>
+                      <td><input type="checkbox"> tipo 2</td>
+                      <td><input type="checkbox"> tipo 2</td>
+                    </tr>
+                    <tr>
+                      <td><input type="checkbox"> tipo 3</td>
+                      <td><input type="checkbox"> tipo 3</td>
+                      <td><input type="checkbox"> tipo 3</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              
+            </div>
+      </div>
+      <div class="col-md-3">
+          <button type="button"
+                  class="btn btn-primary"
+                  style="margin-bottom: 10px">
+            <span class="fa fa-plus"></span>
+            Nuevo Grupo
+          </button>
+          <br>
+          <button type="submit"
+                  class="btn btn-success"
+                  style="margin-bottom: 10px">
+            <span class="fa fa-save"></span>
+            Guardar
+          </button>
+      </div>
+  </div>
+-->

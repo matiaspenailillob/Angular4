@@ -1,0 +1,164 @@
+
+
+<div class="col col-md"></div>
+<h2 style="margin-top: 50px">Sincronización </h2>
+<form  >
+  
+  <div class="col-md-12" style="margin-bottom: 10px">
+    <div class="card">
+        <div class="card-content" >
+            <div class="col-md-12 form-inline " style="margin: 10px">
+              <div class="col-md-3 " style="width: 50%; text-align: center">
+                   <h6 style="float: left;">N° Solicitud: {{ solicitudDesignada }}</h6>
+              </div>
+              <div class="col-md-3 " style="width: 50%; text-align: center">
+                  <h6 style="float: left;">Camp. Posibles: {{ cantCampPosibles }}</h6>
+              </div>
+              <div class="col-md-3 " style="width: 50%; text-align: center">
+                  <h6 style="float: left;">Camp. Detectados: {{ cantCampDetectados }}</h6>
+              </div>
+              <div class="col-md-3 " style="width: 50%; text-align: center">
+                  <h6 style="float: left;">Cant. Categorias: {{ res }}</h6>
+              </div>
+            </div>
+        </div> 
+      </div>
+  </div>
+    
+
+  <div class="col-md-12 form-inline" style="width: 100%;" >
+      <div class="col-md-4" id="tbCampPosibles">
+          <table class="table table-bordered tbformat div1" >
+            <thead>
+              <th>Campos Posibles</th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let campoposible of camposposibles">
+                <td style="height: 20%;">
+                  <div>{{ campoposible }} </div></td>
+                <!--
+                  <tr>
+                   <tr><td class="dato"  style="text-align: left"> Fecha Nacimiento <input type="hidden" id="FECHA_NACIMIENTO" name="FECHA_NACIMIENTO" value="0"/></td>
+                        <td class="dato"  style="text-align: left">dd</tr>
+                    <tr><td class="dato"  style="text-align: left"> Sexo (F, M) <input type="hidden" id="CV_SEXO" name="CV_SEXO" value="-1"/></td> <td class="dato"  style="text-align: left">dd</td></tr>
+                    <tr><td class="dato"  style="text-align: left"> Capital / Renta UF  <input type="hidden" id="CAPITAL" name="CAPITAL" value="-1"/></td> <td class="dato"  style="text-align: left">-destino-</td></tr>
+                    <tr><td class="dato"  style="text-align: left"> Nro de Cargas (Salud) <input type="hidden" id="NRO_CARGAS" name="NRO_CARGAS" value="-1"/></td> <td class="dato"  style="text-align: left">-destino-</td></tr>
+                    <tr><td class="dato"  style="text-align: left"> Rut Completo <input type="hidden" id="RUT" name="RUT" value="-1"/></td> <td class="dato"  style="text-align: left">-destino-</td></tr>
+                    <tr><td class="dato"  style="text-align: left"> Nro Rut Aseg. Titular <input type="hidden" id="NRO_RUT_ASEGURADO" name="NRO_RUT_ASEGURADO" value="5"/></td> <td class="dato"  style="text-align: left">-destino-</td></tr>
+                    <tr><td class="dato"  style="text-align: left"> Dv Rut Aseg. Titular <input type="hidden" id="DV_RUT_ASEGURADO" name="DV_RUT_ASEGURADO" value="-1"/></td> <td class="dato"  style="text-align: left">-destino-</td></tr>
+                    <tr><td class="dato"  style="text-align: left"> Nombre Aseg. Titular <input type="hidden" id="NOMBRE_ASEGURADO" name="NOMBRE_ASEGURADO" value="-1"/></td> <td class="dato"  style="text-align: left">-destino-</td></tr>
+                    <tr><td class="dato"  style="text-align: left"> Apellido Paterno <input type="hidden" id="APAT_ASEGURADO" name="APAT_ASEGURADO" value="-1"/></td> <td class="dato"  style="text-align: left">-destino-</td></tr>
+                    <tr><td class="dato"  style="text-align: left"> Apellido Materno <input type="hidden" id="AMAT_ASEGURADO" name="AMAT_ASEGURADO" value="-1"/></td> <td class="dato"  style="text-align: left">-destino-</td></tr>
+                    <tr><td class="dato" title="(JAR, PKI, KIN, 1BA-8BA, 1ME-4ME, 1SU-7SU)"  style="text-align: left"> Curso  <input type="hidden" id="CV_NIVEL_O_CURSO" name="CV_NIVEL_O_CURSO" value="-1"/></td> <td class="dato"  style="text-align: left">-destino-</td></tr>
+                    <tr><td class="dato"  style="text-align: left"> Edad 	  <input type="hidden" id="EDAD" name="EDAD" value="-1"/></td> <td class="dato"  style="text-align: left">-destino-</td></tr>
+                    <tr><td class="dato"  style="text-align: left"> Parentesco (TIT) 	  <input type="hidden" id="CV_PARENTESCO" name="CV_PARENTESCO" value="-1"/></td> <td class="dato"  style="text-align: left">-destino-</td></tr>
+                    <tr><td class="dato"  style="text-align: left"> Renta en Pesos ($) 	  <input type="hidden" id="RENTA_PESOS" name="RENTA_PESOS" value="-1"/></td> <td class="dato"  style="text-align: left">-destino-</td></tr>
+                    <tr><td class="dato"  style="text-align: left"> Rut Carga 	  <input type="hidden" id="NO_EXISTE_1" name="NO_EXISTE_1" value="-1"/></td> <td class="dato"  style="text-align: left">-destino-</td></tr>
+                    <tr><td class="dato"  style="text-align: left"> Nro Asegurado (Id) 	  <input type="hidden" id="NO_EXISTE_2" name="NO_EXISTE_2" value="-1"/></td> <td class="dato"  style="text-align: left">-destino-</td></tr>
+                    <tr><td class="dato"  style="text-align: left"> Nro Dependiente (Id )	  <input type="hidden" id="NO_EXISTE_3" name="NO_EXISTE_3" value="-1"/></td> <td class="dato"  style="text-align: left">-destino-</td></tr>
+                    <tr><td class="dato"  style="text-align: left"> Total Asegurados Fila (1) 	  <input type="hidden" id="NO_EXISTE_4" name="NO_EXISTE_4" value="-1"/></td> <td class="dato"  style="text-align: left">-destino-</td>
+                  </tr>
+                -->
+              </tr>
+            </tbody>
+          </table>
+      </div>
+      <div class=" col-md-8 " id="tbCampDetectados" >
+          <table class="table table-bordered tbformat div2" >
+            <thead>
+              <th>Campos Detectados</th>
+              <th>Sincronización</th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let camposDetetado of camposDetectados">
+                <td>{{ camposDetetado }}</td>
+                <td style="text-align: center">
+                  <!--
+                    <section dndDropzone
+                    (dndDragover)="onDragover($event)"
+                    (dndDrop)="onDrop($event)">
+                        Enlazar Campo
+
+                        <div style="border: 1px orangered solid; border-radius: 5px; padding: 15px;"
+                        (dndCopied)="onDraggableCopied($event)" >
+                            Inserte AQUI
+                        </div>
+                      
+                    </section>
+                  -->
+                    <select class="form-control" formControlName="selectCampoPosible" [ngModel]="selectCampoPosible">
+                        <option value="-1">Seleccione...</option>
+                        <option *ngFor="let campoposible of camposposibles" [value]="campoposible">{{ campoposible }}</option>
+                    </select>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+      </div>  
+  </div>
+
+<div class="col-md-12 div2" style=" text-align: right">
+  <button type="button" class="btn btn-success " style="margin-top: 10px; margin-bottom: 20px"  routerLink="/resumen"
+          [disabled]="">
+    Generar Resumen
+    <span class="fa fa-spinner"></span>
+  </button>
+</div>
+</form>
+
+<!-- funciones -->
+<script type="text/javascript">
+var dragged;
+
+  /* events fired on the draggable target */
+  document.addEventListener("drag", function( event ) {
+
+  }, false);
+
+  document.addEventListener("dragstart", function( event ) {
+      // store a ref. on the dragged elem
+      dragged = event.target;
+      // make it half transparent
+      event.target.style.opacity = .5;
+  }, false);
+
+  document.addEventListener("dragend", function( event ) {
+      // reset the transparency
+      event.target.style.opacity = "";
+  }, false);
+
+  /* events fired on the drop targets */
+  document.addEventListener("dragover", function( event ) {
+      // prevent default to allow drop
+      event.preventDefault();
+  }, false);
+
+  document.addEventListener("dragenter", function( event ) {
+      // highlight potential drop target when the draggable element enters it
+      if ( event.target.className == "dropzone" ) {
+          event.target.style.background = "purple";
+      }
+
+  }, false);
+
+  document.addEventListener("dragleave", function( event ) {
+      // reset background of potential drop target when the draggable element leaves it
+      if ( event.target.className == "dropzone" ) {
+          event.target.style.background = "";
+      }
+
+  }, false);
+
+  document.addEventListener("drop", function( event ) {
+      // prevent default action (open as link for some elements)
+      event.preventDefault();
+      // move dragged elem to the selected drop target
+      if ( event.target.className == "dropzone" ) {
+          event.target.style.background = "";
+          dragged.parentNode.removeChild( dragged );
+          event.target.appendChild( dragged );
+      }
+    
+  }, false);
+</script>
+
