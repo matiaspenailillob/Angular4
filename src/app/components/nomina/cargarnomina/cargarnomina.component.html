@@ -26,7 +26,7 @@
                    id="solicitud"
                    formControlName="solicitud"
                    [(ngModel)]="solicitud"  />
-
+            <button class="btn btn-primary" (click)="onValidateSolicitud()" )>Validar</button>
           </div>
         </div>
 
@@ -59,7 +59,7 @@
 
     </form>
     <p *ngIf="estado">
-      <app-sincronizacion></app-sincronizacion>
+      <app-sincronizacion on></app-sincronizacion>
     </p>
 </div>
 

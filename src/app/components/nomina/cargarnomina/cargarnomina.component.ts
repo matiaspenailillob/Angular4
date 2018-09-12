@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, Input , Output, EventEmitter} from '@angular/core';
-import { NgModel, FormsModule, FormBuilder, FormControl, FormGroup, Validators, Validator, ValidatorFn, AbstractControl } from '@angular/forms';
+import { NgModel, FormsModule, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { SincronizacionComponent } from '../../sincronizar/sincronizacion/sincronizacion.component';
 
 @Component({
@@ -15,8 +15,6 @@ export class CargarNominaComponent implements OnInit {
   excelFile: any;
 
   cargarnominaForm: FormGroup;
-
-  compSincronizacion: SincronizacionComponent;
 
   solicitudPrueba: number = 1234;
 
@@ -55,6 +53,10 @@ export class CargarNominaComponent implements OnInit {
 
   validateScan(){
     return this.excelFile != "" ? true : false;
+  }
+
+  onValidateSolicitud(){
+
   }
 
 }
